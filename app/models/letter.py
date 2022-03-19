@@ -3,7 +3,7 @@ from uuid import uuid4, UUID
 from typing import Optional
 from pydantic import BaseModel, Field
 
-from address import Address
+from app.models.address import Address
 
 
 class Letter(BaseModel):
