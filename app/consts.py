@@ -1,5 +1,6 @@
 from pathlib import Path
 
 
-class AppConsts:
+class LetterConsts:
     LETTER_BASE_PATH = Path("letters")
+    LETTER_FILE_EXTENSION = ".json"
