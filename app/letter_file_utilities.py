@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import remove
 
 from letter import Letter
 from consts import LetterConsts
@@ -23,6 +24,15 @@ def read_letter_file(letter_id: str) -> Letter:
     """
     letter_path = get_letter_path(letter_id)
     return Letter.parse_file(letter_path)
+
+
+def delete_letter_file(letter_id: str):
+    """
+    Get letter uuid and delete it
+    :param letter_id: uuid of letter as string
+    """
+    letter_path = get_letter_path(letter_id)
+    remove(letter_path)
 
 
 def create_letter_path(letter: Letter) -> Path:
