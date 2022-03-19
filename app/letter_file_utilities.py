@@ -19,7 +19,7 @@ def write_letter_to_file(letter: Letter):
 def read_letter_file(letter_id: str) -> Letter:
     """
     Get a letter uuid, and return a letter object
-    :param letter_id: uuid of letter
+    :param letter_id: uuid of letter as string
     :return: letter object as taken from saved letter
     """
     letter_path = get_letter_path(letter_id)
@@ -44,10 +44,10 @@ def create_letter_path(letter: Letter) -> Path:
     return LetterConsts.LETTER_BASE_PATH / (str(letter.id) + LetterConsts.LETTER_FILE_EXTENSION)
 
 
-def get_letter_path(letter_id: str):
+def get_letter_path(letter_id: str) -> Path:
     """
     Receive letter id and return its path (based on its ID)
-    :param letter_id: letter uuid
+    :param letter_id: letter uuid as string
     :return: path to letter
     """
     return LetterConsts.LETTER_BASE_PATH / (str(letter_id) + LetterConsts.LETTER_FILE_EXTENSION)
