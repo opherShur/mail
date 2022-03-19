@@ -1,5 +1,4 @@
-from uuid import UUID
-from typing import Union
+from uuid import uuid4, UUID
 
 from pydantic import BaseModel, Field
 
@@ -7,7 +6,7 @@ from address import Address
 
 
 class Letter(BaseModel):
-    id: Union[UUID, int, str]
+    id: UUID = Field(default_factory=uuid4)
     sender_address: Address
     sender_name: str
     receiver_address: Address
