@@ -11,7 +11,7 @@ def write_letter_to_file(letter: Letter):
     :param letter: letter object
     """
     letter_path = create_letter_path(letter)
-    with open(letter_path) as letter_file:
+    with open(letter_path, "w") as letter_file:
         letter_file.write(letter.json())
 
 
