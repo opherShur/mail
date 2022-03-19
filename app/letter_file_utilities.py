@@ -1,7 +1,7 @@
 from pathlib import Path
 from os import remove
 
-from letter import Letter
+from app.models.letter import Letter
 from consts import LetterConsts
 
 
