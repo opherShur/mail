@@ -31,7 +31,7 @@ def create_letter_path(letter: Letter) -> Path:
     :param letter: letter object
     :return: path to letter
     """
-    return LetterConsts.LETTER_BASE_PATH + letter.id + LetterConsts.LETTER_FILE_EXTENSION
+    return LetterConsts.LETTER_BASE_PATH / (str(letter.id) + LetterConsts.LETTER_FILE_EXTENSION)
 
 
 def get_letter_path(letter_id: str):
@@ -40,4 +40,4 @@ def get_letter_path(letter_id: str):
     :param letter_id: letter uuid
     :return: path to letter
     """
-    return LetterConsts.LETTER_BASE_PATH + str(letter_id) + LetterConsts.LETTER_FILE_EXTENSION
+    return LetterConsts.LETTER_BASE_PATH / (str(letter_id) + LetterConsts.LETTER_FILE_EXTENSION)
