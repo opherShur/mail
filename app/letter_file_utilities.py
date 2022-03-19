@@ -1,11 +1,10 @@
 from pathlib import Path
-from uuid import UUID
 
 from letter import Letter
 from consts import LetterConsts
 
 
-def write_letter(letter: Letter):
+def write_letter_to_file(letter: Letter):
     """
     Receive letter object and write it to file.
     Assumes it doesn't exist.
@@ -16,7 +15,7 @@ def write_letter(letter: Letter):
         letter_file.write(letter.json())
 
 
-def read_letter(letter_id: UUID) -> Letter:
+def read_letter_file(letter_id: str) -> Letter:
     """
     Get a letter uuid, and return a letter object
     :param letter_id: uuid of letter
@@ -35,7 +34,7 @@ def create_letter_path(letter: Letter) -> Path:
     return LetterConsts.LETTER_BASE_PATH + letter.id + LetterConsts.LETTER_FILE_EXTENSION
 
 
-def get_letter_path(letter_id: UUID):
+def get_letter_path(letter_id: str):
     """
     Receive letter id and return its path (based on its ID)
     :param letter_id: letter uuid
